@@ -9,9 +9,9 @@ for _ in range(5):
         pares += 1
     else:
         impares += 1
-    if num >= 0:
+    if num > 0:
         positivos += 1
-    else:
+    elif(num < 0):
         negativos += 1
 
 print(f"{pares} valor(es) par(es)")
