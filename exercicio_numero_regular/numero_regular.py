@@ -1,27 +1,17 @@
-import math
+num = int(input())
 
-def eh_primo(n: int):
-        if n <= 1:
-            return False
-        elif n % 2 == 0 and n != 2:
-            return False
-        else:
-            raiz = int(math.sqrt(n))
-            for k in range(3, raiz + 1, 2):
-                if n % k == 0:
-                    return False
-            return True
-            
-n, m = [int(x) for x in input().split()]
+eh_regular = False
 
-p1 = n
-p2 = m
-
-while not eh_primo(p1):
-    p1 -= 1
-
-while not eh_primo(p2):
-    p2 += 1
-
-produto = p1 * p2
-print(produto)
+while num != 1:
+    if num % 2 == 0:
+        num //= 2
+    elif num % 3 == 0:
+        num //= 3
+    elif num % 5 == 0:
+        num //= 5
+    else:
+        eh_regular = False
+        break
+    eh_regular = True
+    
+print(eh_regular)
